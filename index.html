@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>For Naina ♡</title>
+<style>
+:root{
+  --cola:#120709;--cola2:#241014;--cherry:#8f1738;--cherry2:#c62d58;
+  --rose:#ff8fab;--cream:#fff3ee;--muted:#cdb5bb;--line:#4a2630;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--cola);color:var(--cream);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+ radial-gradient(circle at 50% 0%,rgba(198,45,88,.22),transparent 38%),
+ radial-gradient(circle at 20% 80%,rgba(143,23,56,.12),transparent 32%);}
+main{width:min(720px,100%);margin:auto;padding:18px 16px 48px;position:relative;z-index:1}
+.screen{min-height:calc(100vh - 66px);display:flex;flex-direction:column;justify-content:center}
+.hidden{display:none!important}
+.fade-in{animation:fadeIn .65s ease both}.fade-out{animation:fadeOut .48s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fadeOut{from{opacity:1}to{opacity:0;transform:translateY(-8px)}}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;color:#ff9ab0;font-size:.68rem;text-align:center}
+h1,h2{font-family:Georgia,serif;text-align:center;margin:12px 0}
+h1{font-size:clamp(2.8rem,13vw,5.2rem);line-height:.92}
+h2{font-size:clamp(2.1rem,9vw,3.5rem)}
+p{line-height:1.7;color:var(--muted)}
+.center{text-align:center}
+.card{background:linear-gradient(145deg,rgba(43,18,25,.9),rgba(15,7,9,.94));border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.45)}
+.sparkles{text-align:center;font-size:2rem;letter-spacing:.35em;color:#ff91aa}
+button{border:0;border-radius:999px;min-height:48px;padding:13px 21px;background:linear-gradient(135deg,var(--cherry2),var(--cherry));color:white;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:0 10px 30px rgba(198,45,88,.22)}
+button.secondary{background:#241217;border:1px solid var(--line);box-shadow:none}
+button:focus-visible{outline:3px solid #ffb6c5;outline-offset:3px}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+
+/* splash */
+.splash-logo{width:92px;height:92px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;
+ background:radial-gradient(circle at 35% 30%,#ef5b7c,#8f1738 62%,#3a0b17);
+ box-shadow:0 0 0 1px #6f2637,0 0 55px rgba(198,45,88,.3);font-size:2.5rem}
+.tap{margin-top:25px;color:#ffadbd;font-size:.86rem;letter-spacing:.08em;text-align:center;animation:pulse 1.7s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45}}
+
+/* game */
+.game-wrap{width:100%;max-width:680px;margin:auto}
+.hud{display:flex;gap:8px;margin:14px 0 10px}
+.hud-box{flex:1;text-align:center;background:#1a0c11;border:1px solid #43222c;border-radius:14px;padding:8px 5px}
+.hud-label{display:block;color:#a98e95;font-size:.63rem;text-transform:uppercase;letter-spacing:.1em}
+.hud-value{display:block;font-weight:900;font-size:1.05rem;color:#ffe9e2}
+#gameArea{position:relative;width:100%;height:min(62vh,500px);min-height:380px;overflow:hidden;border:1px solid #4b2630;border-radius:24px;
+ background:
+ radial-gradient(circle at 30% 15%,rgba(255,143,171,.08),transparent 22%),
+ linear-gradient(180deg,#1b0b10,#0b0507 75%);
+ touch-action:none;user-select:none}
+#gameArea:after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:76px 76px;opacity:.035}
+.heart-drop{position:absolute;width:34px;height:34px;display:grid;place-items:center;color:#ff7397;font-size:29px;line-height:1;filter:drop-shadow(0 5px 10px rgba(255,50,110,.2));pointer-events:none}
+#bucket{position:absolute;bottom:13px;left:50%;width:74px;height:40px;transform:translateX(-50%);border:2px solid #ffd4dc;border-radius:9px 9px 18px 18px;background:linear-gradient(180deg,#d9476a,#7e1532);box-shadow:0 8px 25px rgba(180,24,65,.35);z-index:10;touch-action:none}
+#bucket:before{content:"";position:absolute;left:9px;right:9px;top:-10px;height:18px;border:3px solid #ffd4dc;border-bottom:0;border-radius:50% 50% 0 0}
+#bucket:after{content:"♡";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:19px;font-weight:900}
+#gameMsg{text-align:center;min-height:26px;margin:9px 0;color:#c6adb4;font-size:.84rem}
+.small{font-size:.82rem;color:#9e858d}
+
+/* reveal gate */
+.reveal-gate{text-align:center}
+.envelope{width:112px;height:82px;margin:0 auto 24px;border-radius:14px;background:linear-gradient(145deg,#c62d58,#71132d);position:relative;box-shadow:0 15px 45px rgba(198,45,88,.22);cursor:pointer}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 49%,#ef7893 50%,transparent 52%),linear-gradient(225deg,transparent 49%,#ef7893 50%,transparent 52%);opacity:.75}
+.envelope:after{content:"♡";position:absolute;inset:0;display:grid;place-items:center;font-size:2.3rem;color:#fff3ee}
+.gate-title{font-family:Georgia,serif;font-size:2.1rem;margin:8px 0}
+.gate-sub{color:#cdb5bb}
+.note{white-space:pre-line;text-align:left;background:linear-gradient(145deg,#190b10,#0f0608);border:1px solid #4b2630;border-radius:22px;padding:23px;color:#f9e9e5;line-height:1.9}
+.signature{text-align:right;margin-top:18px;color:#ff9db2;font-family:Georgia,serif;font-size:1.2rem}
+.reveal{animation:reveal .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes reveal{from{opacity:0;transform:scale(.96) translateY(18px)}to{opacity:1;transform:none}}
+.final{font-size:1.04rem;color:#ecd8dc}
+@media(max-width:480px){main{padding:12px 12px 36px}#gameArea{height:58vh;min-height:350px}#bucket{width:70px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <section id="intro" class="screen fade-in">
+    <div class="card">
+      <div class="splash-logo">♡</div>
+
+      <h1>Hi, Jaan</h1>
+      <p class="center">I could've just said “Happy Birthday”<br>but I'm gonna make you work for it instead 😝</p>
+      <div class="actions"><button id="enter">Tap to begin ♡</button></div>
+    </div>
+  </section>
+
+  <section id="gameSplash" class="screen hidden">
+    <div class="card fade-in">
+      <h2>Catch the hearts</h2>
+      <div class="actions"><button id="launch">I'm ready ♡</button></div>
+    </div>
+  </section>
+
+  <section id="game" class="screen hidden">
+    <div class="game-wrap fade-in">
+      <div class="eyebrow">birthday mission</div>
+      <h2>Catch the hearts ♡</h2>
+      <div class="hud">
+        <div class="hud-box"><span class="hud-label">caught</span><span id="score" class="hud-value">0 / 15</span></div>
+        <div class="hud-box"><span class="hud-label">time</span><span id="time" class="hud-value">30.0s</span></div>
+        <div class="hud-box"><span class="hud-label">missed</span><span id="missed" class="hud-value">0 / 5</span></div>
+      </div>
+      <div id="gameArea"><div id="bucket" aria-label="Catch bucket"></div></div>
+      <div id="gameMsg">Move fast. 💗</div>
+    </div>
+  </section>
+
+  <section id="gameOver" class="screen hidden">
+    <div class="card fade-in" style="text-align:center">
+      <div class="eyebrow">mission failed</div>
+      <h2>☠️</h2>
+      <p id="gameOverText" class="center">The hearts got away.</p>
+      <div class="actions"><button id="retry">Try again ♡</button></div>
+    </div>
+  </section>
+
+  <section id="gate" class="screen hidden">
+    <div class="card reveal-gate fade-in">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open birthday message"></div>
+      <div class="eyebrow">you caught them all baby!</div>
+      <div class="gate-title">One last thing...</div>
+    
+    </div>
+  </section>
+
+  <section id="messageScreen" class="screen hidden">
+    <div class="card reveal">
+      <h2>Happy Birthday Meri Jaan ❤️</h2>
+      <p class="center">to my favourite person to annoy, miss, laugh with,<br>
+      <div class="note">
+I hope today gives you all the happiness you deserve, I hope you laugh a lot, eat something ridiculously good, get spoiled by everyone around you, and have one of the best birthdays ever!
+
+and selfishly, I'm really glad I get to be a part of your day too.
+
+There are so many little things about you that I could write here, but I'd rather tell you those myself. Just know that you mean a lot to me.
+</div>
+      <div class="signature">— me, obviously ♡</div>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+const $=id=>document.getElementById(id);
+const intro=$("intro"), splash=$("gameSplash"), game=$("game"), gameOver=$("gameOver"), gate=$("gate"), message=$("messageScreen");
+const retry=$("retry"), gameOverText=$("gameOverText");
+const enter=$("enter"), launch=$("launch"), envelope=$("envelope"), area=$("gameArea"), bucket=$("bucket");
+const scoreEl=$("score"), timeEl=$("time"), missedEl=$("missed"), msg=$("gameMsg");
+let running=false,score=0,missed=0,last=0,startTime=0,spawnTimer=0,raf=0,drops=[],bucketX=0,keys=new Set(),pointerId=null,lastPX=0;
+const WIN=15,MAX=5,DURATION=25000;
+
+function swap(from,to){
+  from.classList.add("fade-out");
+  setTimeout(()=>{from.classList.add("hidden");from.classList.remove("fade-out");to.classList.remove("hidden");to.classList.add("fade-in");window.scrollTo({top:0,behavior:"smooth"});},460);
+}
+function resetBucket(){bucketX=(area.clientWidth-bucket.offsetWidth)/2;bucket.style.left=bucketX+"px";bucket.style.transform="none"}
+function hud(rem){scoreEl.textContent=score+" / "+WIN;missedEl.textContent=missed+" / "+MAX;timeEl.textContent=Math.max(0,rem/1000).toFixed(1)+"s"}
+function spawn(){
+ if(!running)return;
+ const el=document.createElement("div");el.className="heart-drop";el.textContent=Math.random()<.2?"💗":"♥";
+ const size=25+Math.random()*7,x=Math.random()*(area.clientWidth-size),speed=185+Math.random()*125+score*4;
+ el.style.width=size+"px";el.style.height=size+"px";el.style.left=x+"px";el.style.top="-45px";area.appendChild(el);
+ drops.push({el,x,y:-45,size,speed,phase:Math.random()*6.28});
+}
+function remove(d){d.el.remove();const i=drops.indexOf(d);if(i>=0)drops.splice(i,1)}
+function hit(d){
+ const by=area.clientHeight-13-bucket.offsetHeight,bx=bucketX,bw=bucket.offsetWidth;
+ return d.x+d.size*.75>bx&&d.x+d.size*.25<bx+bw&&d.y+d.size*.75>by&&d.y<by+bucket.offsetHeight;
+}
+function finish(win){
+ if(!running)return;running=false;cancelAnimationFrame(raf);drops.forEach(d=>d.el.remove());drops=[];
+ if(win){
+   msg.textContent="You caught them all. ❤️";
+   setTimeout(()=>swap(game,gate),700);
+ }else{
+   gameOverText.textContent = score+" / "+WIN+" hearts caught. "+missed+" slipped past you.";
+   setTimeout(()=>swap(game,gameOver),650);
+ }
+}
+function frame(now){
+ if(!running)return;
+ const dt=Math.min(.035,(now-last)/1000||0);last=now;const rem=DURATION-(now-startTime);
+ if(keys.has("ArrowLeft"))bucketX-=430*dt;if(keys.has("ArrowRight"))bucketX+=430*dt;
+ bucketX=Math.max(0,Math.min(area.clientWidth-bucket.offsetWidth,bucketX));bucket.style.left=bucketX+"px";
+ spawnTimer+=dt;const every=Math.max(.22,.43-score*.009);
+ if(spawnTimer>=every){spawnTimer=0;spawn();if(Math.random()<.30)spawn()}
+ for(let i=drops.length-1;i>=0;i--){
+   const d=drops[i];d.y+=d.speed*dt;d.x+=Math.sin(d.y/65+d.phase)*10*dt;
+   d.el.style.left=d.x+"px";d.el.style.top=d.y+"px";
+   if(hit(d)){score++;remove(d);if(score>=WIN){hud(rem);finish(true);return}}
+   else if(d.y>area.clientHeight+10){missed++;remove(d);if(missed>=MAX){hud(rem);finish(false);return}}
+ }
+ hud(rem);if(rem<=0){finish(score>=WIN);return}raf=requestAnimationFrame(frame)
+}
+function startGame(){
+ score=0;missed=0;drops.forEach(d=>d.el.remove());drops=[];running=true;launch.disabled=true;launch.textContent="Catch them! ♡";msg.textContent="Go go go! 💗";resetBucket();
+ startTime=performance.now();last=startTime;spawnTimer=.4;raf=requestAnimationFrame(frame)
+}
+enter.addEventListener("click",()=>swap(intro,splash));
+launch.addEventListener("click",()=>{swap(splash,game);setTimeout(startGame,520)});
+retry.addEventListener("click",()=>{gameOver.classList.add("fade-out");setTimeout(()=>{gameOver.classList.add("hidden");gameOver.classList.remove("fade-out");splash.classList.remove("hidden");splash.classList.add("fade-in");launch.disabled=false;launch.textContent="Try again ♡";},460)});
+function openMessage(){swap(gate,message)}
+envelope.addEventListener("click",openMessage);
+envelope.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openMessage()}});
+
+addEventListener("keydown",e=>{if(e.key==="ArrowLeft"||e.key==="ArrowRight"){e.preventDefault();keys.add(e.key)}});
+addEventListener("keyup",e=>keys.delete(e.key));
+area.addEventListener("pointerdown",e=>{if(!running)return;pointerId=e.pointerId;lastPX=e.clientX;area.setPointerCapture(pointerId)});
+area.addEventListener("pointermove",e=>{if(pointerId!==e.pointerId||!running)return;bucketX+=e.clientX-lastPX;lastPX=e.clientX;bucketX=Math.max(0,Math.min(area.clientWidth-bucket.offsetWidth,bucketX));bucket.style.left=bucketX+"px"});
+area.addEventListener("pointerup",e=>{if(pointerId===e.pointerId)pointerId=null});
+area.addEventListener("pointercancel",e=>{if(pointerId===e.pointerId)pointerId=null});
+addEventListener("resize",()=>{if(!running)resetBucket()});resetBucket();
+})();
+</script>
+</body>
+</html>
